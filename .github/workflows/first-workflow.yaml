@@ -1,4 +1,4 @@
-name: workflow
+name: First Workflow
 on: [push]
 
 jobs:
@@ -6,23 +6,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: echo a string
-        run: echo "Hello World!"
-      - name: Multiline Commands
+        run: echo "Hello World"
+      - name: Multiline Command
         run: |
           node -v
           npm -v
-
   parallel-job-macos:
     runs-on: macos-latest
     steps:
-      - name: View Software Version
+      - name: View SW Version
         run: sw_vers
-
-  dependent-job:
+  dependant-job:
     runs-on: windows-latest
     needs: run-shell-commands
     steps:
-      - name: echo
+      - name: echo a string
         run: Write-Output "Windows String"
       - name: Error Step
-        run: doesnotexist!!
+        run: doesnotexitsss
